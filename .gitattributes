@@ -1,0 +1,35 @@
+# Normalize line endings for text, and keep Git's hands off binaries.
+#
+# This machine has core.autocrlf=true, and Git had started classifying
+# public/Vennela_Neelap_Resume.pdf as text — line-ending conversion on a
+# binary corrupts it. Vercel builds from a fresh Linux clone, so a file
+# mangled at checkout would ship broken while looking fine locally.
+
+* text=auto eol=lf
+
+# Documents
+*.pdf   binary
+
+# Images
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.webp  binary
+*.avif  binary
+
+# Audio
+*.mp3   binary
+*.wav   binary
+*.ogg   binary
+
+# Fonts
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.eot   binary
+
+# 3D scenes (Spline msgpack)
+*.spline binary
